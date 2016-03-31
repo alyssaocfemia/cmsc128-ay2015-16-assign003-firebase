@@ -1,0 +1,113 @@
+ <!DOCTYPE html>
+  <html>
+    <head>
+      <!--Import Google Icon Font-->
+      <link href="http://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+      <!--Import materialize.css-->
+      <link type="text/css" rel="stylesheet" href="materialize/css/materialize.min.css"  media="screen,projection"/>
+      <title>Event Guest Attendance</title>
+      <link rel="shortcut icon" type="image/x-icon" href="images/favicon.ico" />
+      <!--Let browser know website is optimized for mobile-->
+      <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+      <script src='https://cdn.firebase.com/js/client/2.2.1/firebase.js'></script>
+    </head>
+
+    <body style="background-color:#00acc1">
+
+
+     
+    <form class="col s12">
+      <div class="row">
+        <div class="input-field col s6">
+          <i class="material-icons prefix">account_circle</i>
+          <input id="firstName" type="text" class="validate ">
+          <label for="firstName">First Name</label>
+        </div>
+        <div class="input-field col s6">
+          <input id="lastName" type="text" class="validate">
+          <label for="lastName">Last Name</label>
+        </div>
+      </div>
+      <div class="row" style ="margin-right: 20%; margin-left:20%">
+        <div class="input-field col s12">
+            <i class="material-icons prefix">assignment_ind</i>
+            <input id="studentNumber" type="tel" class="validate">
+            <label for="studentNumber">Student Number</label>
+        </div>
+      </div>
+      <div class="row">
+        <div class="input-field col s6">
+            <i class="material-icons prefix">business</i>
+            <input id="college" type="tel" class="validate">
+            <label for="college">College</label>
+        </div>
+        <div class="input-field col s6">
+            <i class="material-icons prefix">loyalty</i>
+            <input id="course" type="tel" class="validate">
+            <label for="course">Course</label>
+        </div>
+      </div>
+      <div class="row">
+        <div class="input-field col s12">
+            <i class="material-icons prefix">phone</i>
+            <input id="contactNumber" type="tel" class="validate">
+            <label for="contactNumber">Contact Number</label>
+        </div>
+        <div class="input-field col s12">
+            <i class="material-icons prefix">phone</i>
+            <input id="emailAddress" type="tel" class="validate">
+            <label for="emailAddress">Email Address</label>
+        </div>
+      </div>
+      <div class="row" style ="margin-right: 20%; margin-left:20%">
+       <div class="input-field col s12">
+          <i class="material-icons prefix">supervisor_account</i>
+          <input id="organization" type="tel" class="validate">
+          <label for="organization">Organization</label>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col s6 offset-s4">
+          <button class="btn waves-effect waves-light" class="submit" name="button" onclick="submit()" type="submit" >Submit
+           <i class="material-icons right">send</i>
+         </button>
+        </div>
+         
+      </div>  
+    </form>
+  
+    <script>
+
+      	alert("sad");
+      	var myDataRef = new Firebase('https://dazzling-fire-7777.firebaseio.com/');
+        var firstName = document.getElementById('firstName');
+        var lastName = document.getElementById('lastName');
+        var studentNumber = document.getElementById('studentNumber');
+        var college = document.getElementById('college');
+        var course = document.getElementById('course');
+        var emailAddress = document.getElementById('emailAddress');
+        var contactNumber = document.getElementById('contactNumber');
+        var organization = document.getElementById('organization');
+	 console.log("push!");
+	myDataRef.push({
+		first_name:	firstName,
+		last_name:	lastName,
+		student_number:	studentNumber,
+		college:	college,
+		course:		course,
+		email_address: emailAddress,
+		contact_number:	contactNumber,
+		organization:	organization });
+
+
+      
+
+    </script>
+
+
+
+      <!--Import jQuery before materialize.js-->
+      <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+      <script type="text/javascript" src="materialize/js/materialize.min.js"></script>
+    </body>
+  </html>
